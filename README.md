@@ -35,7 +35,8 @@ Features:
   表格的数据绑定: 例如 {{teamMembers}} 就把对应的表格绑定到下面 Java代码里的 teamMembers 集合上.
   表格各列的数据绑定: 在数据行的单元格里,使用 ==fieldName 即可绑定到表格数据的字段上.
   特别地, 使用 ==ROW_NUM 可以绑定到内置的自动生成的行号字段.
-
+  
+(贴图: https://github.com/wujianbin-sh/poi-tl-plus/blob/master/projectTemplateDocx.jpg )
 <img src="https://github.com/wujianbin-sh/poi-tl-plus/blob/master/projectTemplateDocx.jpg"/> 
 
 * 子文档模板 projectMilestoneTemplate.docx, 同上,可以使用 POI-TL库和本库提供的表格标签做数据绑定:
