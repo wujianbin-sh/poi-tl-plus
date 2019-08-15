@@ -28,4 +28,10 @@ public class DocxTableRenderData extends DocxRenderData {
 		super(docxFile, dataListForPages);
 		this.functionToGetTableData = functionToGetTableData;
 	}
+	
+	public DocxTableRenderData(InputStream docxInputStream, List<?> dataListForPages,
+			Function<Object, Map<String, Object>> functionToGetTableData) {
+		super(docxInputStream, dataListForPages);
+		this.functionToGetTableData = functionToGetTableData;
+	}
 }
