@@ -71,13 +71,16 @@ public class DocxTableRenderPolicy extends DocxRenderPolicy{
 	}
 
 	public static void renderDocx(String masterTemplateFile, String outputFile, Object data, TableRowRenderPloicy... tableRowRenderPloicies) throws Exception {
-		Configure config = DocxTableRenderPolicy.getConfigure(tableRowRenderPloicies);
-
-		XWPFTemplate template = XWPFTemplate.compile(masterTemplateFile, config).render(data);
-		FileOutputStream out = new FileOutputStream(outputFile);
-		template.write(out);
-		out.flush();
-		out.close();
+		FileInputStream fis = new FileInputStream(new File(masterTemplateFile));
+		FileOutputStream fos = new FileOutputStream(new File(outputFile));
+		renderDocx(fis, fos, data, tableRowRenderPloicies);
 	}   
 
+	public static void renderDocx(InputStream masterTemplateInputStream, OutputStream outputStream, Object data, TableRowRenderPloicy... tableRowRenderPloicies) throws Exception {
+		Configure config = DocxTableRenderPolicy.getConfigure(tableRowRenderPloicies);
+		XWPFTemplate template = XWPFTemplate.compile(masterTemplateInputStream, config).render(data);
+		template.write(outputStream);
+		outputStream.flush();
+		outputStream.close();
+	}
 }
