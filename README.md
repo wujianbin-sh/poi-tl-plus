@@ -28,7 +28,18 @@ Features:
 
 具体样例如下:   
 1) Word模板以及表格的定义:  
-(todo: 贴图)  
+* 模板主文档(projectTemplate.docx), 可以看到里面POI-TL的各自常用标签都可以使用,
+而且表格可以自由定义包括样式 (包括底色,对齐,字体以及字体颜色等等),
+注意: 
+  在一个文档中, 可以添加多个表格,每个表格都可以绑定到不同的数据集上;
+  表格的数据绑定: 例如 {{teamMembers}} 就把对应的表格绑定到下面 Java代码里的 teamMembers 集合上.
+  表格各列的数据绑定: 在数据行的单元格里,使用 ==fieldName 即可绑定到表格数据的字段上.
+  特别地, 使用 ==ROW_NUM 可以绑定到内置的自动生成的行号字段.
+
+<img src="https://github.com/wujianbin-sh/poi-tl-plus/blob/master/projectTemplateDocx.jpg"/> 
+
+* 子文档模板 projectMilestoneTemplate.docx, 同上,可以使用 POI-TL库和本库提供的表格标签做数据绑定:
+(todo: 贴图)
 
 2) Java 代码准备数据模型:  
   // suppose data relationships are:       
